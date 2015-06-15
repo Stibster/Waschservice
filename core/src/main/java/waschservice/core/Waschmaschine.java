@@ -13,6 +13,14 @@ public class Waschmaschine {
     
     private int wmId;
     private Besitzer wmBesitzer;
+    private boolean wmHatTrockner;
+    
+    public Waschmaschine(int id, Besitzer besitzer, boolean trockner)
+    {
+	wmId = id;
+	wmBesitzer = besitzer;
+	wmHatTrockner = trockner;
+    }
 
     public void setWmId(int wmId) {
 	this.wmId = wmId;
