@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package waschservice.core;
 
-/**
- *
- * @author tmann
- */
-public class Waschmaschine {
-    
+public class Waschmaschine
+{
     private int wmId;
     private Besitzer wmBesitzer;
     private boolean wmHatTrockner;
+    private double wmPreis;
     
     public Waschmaschine(int id, Besitzer besitzer, boolean trockner)
     {
@@ -22,20 +14,43 @@ public class Waschmaschine {
 	wmHatTrockner = trockner;
     }
 
-    public void setWmId(int wmId) {
+    public void setWmId(int wmId) 
+    {
 	this.wmId = wmId;
     }
 
-    public void setWmBesitzer(Besitzer wmBesitzer) {
+    public void setWmBesitzer(Besitzer wmBesitzer) 
+    {
 	this.wmBesitzer = wmBesitzer;
     }
+    
+    public void setTrockner(boolean hatTrockner)
+    {
+	wmHatTrockner = hatTrockner;
+    }
+    
+    public void setWmPreis(double wmPreis)
+    {
+	this.wmPreis = wmPreis;
+    }
 
-    public int getWmId() {
+    public int getWmId() 
+    {
 	return wmId;
     }
 
-    public Besitzer getWmBesitzer() {
+    public Besitzer getWmBesitzer() 
+    {
 	return wmBesitzer;
     }
     
+    public boolean hasTrockner()
+    {
+	return wmHatTrockner;
+    }
+    
+    public double getWmPreis()
+    {
+	return wmPreis;
+    }
 }

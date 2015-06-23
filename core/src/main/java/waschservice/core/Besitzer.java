@@ -1,21 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package waschservice.core;
 
 import java.util.*;
 
-/**
- *
- * @author tmann
- */
 public class Besitzer {
     
     private int besId;
     private String besName;
     private List<Waschmaschine> wmListe;
+    private Location besLocation;
     
     public Besitzer(int id, String name)
     {
@@ -24,20 +16,34 @@ public class Besitzer {
 	wmListe = new ArrayList<Waschmaschine>();
     }
 
-    public void setBesId(int besId) {
+    public void setBesId(int besId) 
+    {
 	this.besId = besId;
     }
 
-    public void setBesName(String besName) {
+    public void setBesName(String besName) 
+    {
 	this.besName = besName;
     }
+    
+    public void setLocation(Location besLocation)
+    {
+	this.besLocation = besLocation;
+    }
 
-    public int getBesId() {
+    public int getBesId() 
+    {
 	return besId;
     }
 
-    public String getBesName() {
+    public String getBesName() 
+    {
 	return besName;
+    }
+    
+    public Location getLocation()
+    {
+	return besLocation;
     }
     
     public void addWm(Waschmaschine wm)
@@ -55,6 +61,5 @@ public class Besitzer {
 		return;
 	    }
 	}
-	return;
     }
 }
