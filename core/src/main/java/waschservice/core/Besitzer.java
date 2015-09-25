@@ -2,48 +2,26 @@ package waschservice.core;
 
 import java.util.*;
 
-public class Besitzer {
-    
-    private int besId;
-    private String besName;
+public class Besitzer extends Nutzer 
+{
     private List<Waschmaschine> wmListe;
-    private Location besLocation;
+    private Location location;
     
-    public Besitzer(int id, String name)
+    public Besitzer(String name, int id)
     {
-	besId = id;
-	besName = name;
+	super(name, id);
 	wmListe = new ArrayList<Waschmaschine>();
-    }
-
-    public void setBesId(int besId) 
-    {
-	this.besId = besId;
-    }
-
-    public void setBesName(String besName) 
-    {
-	this.besName = besName;
     }
     
     public void setLocation(Location besLocation)
     {
-	this.besLocation = besLocation;
+	this.location = besLocation;
     }
 
-    public int getBesId() 
-    {
-	return besId;
-    }
 
-    public String getBesName() 
-    {
-	return besName;
-    }
-    
     public Location getLocation()
     {
-	return besLocation;
+	return location;
     }
     
     public void addWm(Waschmaschine wm)
@@ -61,5 +39,17 @@ public class Besitzer {
 		return;
 	    }
 	}
+    }
+    
+    public Waschmaschine getWm(int wmId)
+    {
+	for (int i = 0; i < wmListe.size(); i++)
+	{
+	    if (wmListe.get(i).getWmId() == wmId)
+	    {
+		return wmListe.get(i);
+	    }
+	}
+	return null;
     }
 }
